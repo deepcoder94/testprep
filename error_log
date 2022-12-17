@@ -1,0 +1,23 @@
+[05-Dec-2022 08:31:41 UTC] PHP Notice:  Undefined variable: last_id in /home/ngroup12/public_html/tadpole/testprep/form_registration.php on line 83
+[05-Dec-2022 08:34:06 UTC] PHP Notice:  Undefined variable: last_id in /home/ngroup12/public_html/tadpole/testprep/form_registration.php on line 83
+[09-Dec-2022 06:26:40 UTC] PHP Notice:  Undefined variable: last_id in /home/ngroup12/public_html/tadpole/testprep/form_registration.php on line 83
+[09-Dec-2022 12:01:38 UTC] PHP Notice:  Undefined variable: last_id in /home/ngroup12/public_html/tadpole/testprep/form_registration.php on line 83
+[09-Dec-2022 12:04:32 UTC] PHP Notice:  Undefined variable: last_id in /home/ngroup12/public_html/tadpole/testprep/form_registration.php on line 83
+[09-Dec-2022 12:07:11 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/ngroup12/public_html/tadpole/testprep/form_login.php on line 23
+[09-Dec-2022 12:27:37 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/ngroup12/public_html/tadpole/testprep/form_login.php on line 23
+[14-Dec-2022 06:15:34 UTC] PHP Notice:  Undefined variable: last_id in /home/ngroup12/public_html/tadpole/testprep/form_registration.php on line 83
+[14-Dec-2022 06:16:29 UTC] PHP Notice:  Undefined variable: row in /home/ngroup12/public_html/tadpole/testprep/form_login.php on line 38
+[14-Dec-2022 06:28:27 UTC] PHP Notice:  Undefined variable: row in /home/ngroup12/public_html/tadpole/testprep/form_login.php on line 38
+[14-Dec-2022 06:28:29 UTC] PHP Notice:  Undefined variable: row in /home/ngroup12/public_html/tadpole/testprep/form_login.php on line 38
+[14-Dec-2022 06:28:30 UTC] PHP Notice:  Undefined variable: row in /home/ngroup12/public_html/tadpole/testprep/form_login.php on line 38
+[14-Dec-2022 06:30:53 UTC] PHP Notice:  Undefined variable: row in /home/ngroup12/public_html/tadpole/testprep/form_login.php on line 38
+[14-Dec-2022 06:34:57 UTC] PHP Notice:  Undefined variable: row in /home/ngroup12/public_html/tadpole/testprep/form_login.php on line 38
+[14-Dec-2022 08:34:18 UTC] PHP Notice:  Undefined variable: last_id in /home/ngroup12/public_html/tadpole/testprep/form_registration.php on line 83
+[17-Dec-2022 06:47:24 UTC] PHP Warning:  A non-numeric value encountered in /home/ngroup12/public_html/tadpole/testprep/exam_list.php on line 8
+[17-Dec-2022 06:47:24 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/ngroup12/public_html/tadpole/testprep/exam_list.php on line 11
+[17-Dec-2022 06:56:04 UTC] PHP Notice:  Array to string conversion in /home/ngroup12/public_html/tadpole/testprep/exam_list.php on line 16
+[17-Dec-2022 06:56:26 UTC] PHP Notice:  Array to string conversion in /home/ngroup12/public_html/tadpole/testprep/exam_list.php on line 16
+[17-Dec-2022 06:59:12 UTC] PHP Notice:  Array to string conversion in /home/ngroup12/public_html/tadpole/testprep/exam_list.php on line 13
+[17-Dec-2022 07:04:33 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/ngroup12/public_html/tadpole/testprep/exam_list.php on line 21
+[17-Dec-2022 07:17:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ngroup12/public_html/tadpole/testprep/exam_list.php on line 23
+[17-Dec-2022 07:17:06 UTC] PHP Warning:  array_push() expects parameter 1 to be array, null given in /home/ngroup12/public_html/tadpole/testprep/exam_list.php on line 23
