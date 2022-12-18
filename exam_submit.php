@@ -5,6 +5,9 @@ $response = [
     'success' => false,
 ];
 
+// User_id needs to be replaced with session user_id
+
+// Resetting the quiz for user_id
 if (isset($_POST['resetAttempt'])) {
     $sql = "SELECT * from test_sheet where user_id = 1";
     $result = mysqli_query($conn, $sql);
@@ -22,9 +25,12 @@ if (isset($_POST['selected_answer']) && isset($_POST['exam_id']) && isset($_POST
     $selected_answer = $_POST['selected_answer'];
     $question_id = $_POST['question_id'];
 
+    // checking if record exists => update the record
     $sql = "SELECT * from test_sheet where user_id = 1 and exam_id=1 and question_id = $question_id";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
+
+        // update the record with new answer
         $sql3 = "UPDATE `test_sheet` SET `answer_serial` = '$selected_answer' WHERE 
                 `test_sheet`.`question_id` = $question_id and `test_sheet`.`user_id` = 1 and `test_sheet`.`exam_id`=1";        
         $iquery = mysqli_query($conn, $sql3);
@@ -32,6 +38,8 @@ if (isset($_POST['selected_answer']) && isset($_POST['exam_id']) && isset($_POST
             $response['success'] = true;
         }
     } else {
+
+        // Insert a new record
         $sql2 = "insert into test_sheet
         (exam_id,question_id,answer_serial,user_id)
         values(1,$question_id,$selected_answer,1)";
