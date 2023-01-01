@@ -12,13 +12,22 @@ include 'sqlconfig.php';
 
   <?php
   // }
+									  $sqlc = "SELECT * from NTSE_EXAM_AP_2016_17 where exam_id= 2";
+										$resultc = mysqli_query($conn, $sqlc);
+
+									if (mysqli_num_rows($resultc)>0) {
+									      while($rowc = $resultc->fetch_assoc()) {
+									      	$pblm_question_image = $rowc['pblm_question_image'];
+									      }
+									    }
+
 ?>
 <section class="section why-us" data-section="section2">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-heading">
-					<h2>[NTSE STAGE 1, Andhra Pradesh 2017-18]</h2>
+					<h2>[NTSE STAGE 1, Andhra Pradesh 2016-17]</h2>
 				</div>
 			</div>
 			<!-- <div class="col-md-2 col-xs-12"></div>		 -->
@@ -28,21 +37,38 @@ include 'sqlconfig.php';
 						<input type="hidden" id="current_question" value="1">
 						<input type="hidden" id="total_questions" value="1">
 						<input type="hidden" id="question_id" value="1">
-
-						<div class="content" id="question_div" style="font-size: 16px;font-weight: 600;">
 				<div class="row">						
 					<div class="col-md-2"></div>		
-					<div class="col-md-8 col-xs-12">							
-							<p style="font-size:16px; font-weight: 600;color: #fff;">Directions: Questions (1 to 5) : </p>
-							<p style="font-size:16px; font-weight: 600;color: #fff;">In the number series given below, one number is missing. Each series is followed by five alternatives (1), (2), (3), (4), and (5). One of them is the right answer. Identify and indicate it as per the “instructions”.</p>
+					<div class="col-md-8 col-xs-12">
+						<div class="content" id="question_div" style="font-size: 16px;font-weight: 600;">
+							<p style="font-size:16px; font-weight: 600;color: #fff;">Directions: Questions (1 to 5) :</p>
+							<p style="font-size:16px; font-weight: 600;color: #fff;">In the number series given below, one number is missing. Each series is followed by five alternative answers (1), (2), (3), (4) and (5). One of them is the right answer. Identify and indicate it as per the "Instructions". </p>
 					</div>
-					<div class="col-md-2"></div>	
-					</div>							
+					<div class="col-md-2"></div>								
 							<div class="page-wrap-content" style="padding: 49px;background-color: #ffffff;font-weight: 800;">
-								<p style="font-weight: 600;">
-									Q<span id="qno">0</span>. &nbsp;&nbsp; <span id="question_text_or_img"></span></p>
-								<p style="font-weight: 600;">
-									&nbsp;&nbsp; <span id="question_text_and_img"></span></p>
+								<?php 
+
+									      	if ($pblm_question_image == null) {
+									          ?>
+
+														<p style="font-weight: 600;">Q<span id="qno">0</span>. &nbsp;&nbsp; <span id="question_text_or_img"></span></p>
+														<p style="font-weight: 600;">&nbsp;&nbsp; <span id="question_text_and_img"></span></p>	
+
+									          <?php
+									      	}else{
+									      		?>
+														<p style="font-weight: 600;">&nbsp;&nbsp; <span id="pblm_text"></span></p>
+
+														<p style="font-weight: 600;">Q<span id="qno">0</span>. &nbsp;&nbsp; <span id="pblm_text_or_img"></span></p>
+
+														<p style="font-weight: 600;">&nbsp;&nbsp; <span id="answer_text"></span></p>	
+
+														<p style="font-weight: 600;">&nbsp;&nbsp; <span id="question_text_and_img"></span></p>	
+									      		<?php
+									      	}
+
+								?>
+	
 
 								<form id="ansdiv"></form>
 							</div>
@@ -57,14 +83,15 @@ include 'sqlconfig.php';
 				</div>
 				<div id="end">
 					<div class="page-wrap-content" style="padding: 49px;text-align: center;">
-						<p style="font-size: 25px;font-weight: 600;color: #fff;">Congratulation! You are done!</p>
+						<p style="font-size: 25px;font-weight: 600;">Congratulation! You are done!</p>
 						<button id="edit-previous" onclick="resetQuiz()">Go Back</button>
 					</div>
 				</div>
 			</div>
+			<!-- <div class="col-md-2 col-xs-12"></div>			 -->
 		</div>
 	</div>
-	</div>
+	<!-- </div> -->
 </section>
 <script src="vendor/jquery/jquery.min.js"></script>
 <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
@@ -94,7 +121,7 @@ include 'sqlconfig.php';
 		});
 
 		// populating the first question
-		goToQues(3, 1);
+		goToQues(2, 1);
 	});
 
 	// next button clicked function
@@ -117,7 +144,7 @@ include 'sqlconfig.php';
 		if (current_question < total_questions) {
 			var next_question = current_question + 1;
 			$("#current_question").val(next_question);
-			goToQues(3, next_question);
+			goToQues(2, next_question);
 		}
 		else {
 			$("#page-wrap").hide();
@@ -144,7 +171,7 @@ include 'sqlconfig.php';
 			console.log(data);
 		});
 
-		goToQues(3, 1);
+		goToQues(2, 1);
 
 	}
 
@@ -159,12 +186,12 @@ include 'sqlconfig.php';
 		if (current_question != 1) {
 			var prev_question = current_question - 1;
 			$("#current_question").val(prev_question);
-			goToQues(3, prev_question);
+			goToQues(2, prev_question);
 		}
 	}
 
 	function goToQues(exam_id, question_number) {
-		$.post("exam_list.php", {
+		$.post("ntse_ap_exam_list.php", {
 			"qid": question_number,
 			"exam_id": exam_id
 		}, function (data, status) {
@@ -175,33 +202,30 @@ include 'sqlconfig.php';
 					$("#total_questions").val(obj.total_count);
 					$("#question_div").css("display", "block");
 					$("#qno").html(question_number);
-					$("#question_id").val(obj.data.nt_id);
-					// if (obj.data.image_path == null) {
+					$("#question_id").val(obj.data.nt_ap_id);
+					if (obj.data.image_path == null) {
 						// text question
-					// 	$("#question_text_or_img").html(obj.data.question_text);
-					// }
-					// else {
-						// image question
-					// 	var imgques = `<img src="${obj.data.image_path}">`;
-					// 	$("#question_text_or_img").html(imgques);
-					// }
+						$("#question_text_or_img").html(obj.data.question_text);
+					var imgquess = `<img src="${obj.data.question_image}">`;
+						$("#question_text_and_img").html(imgquess);
+						// $("#question_text_and_img").html(obj.data.question_image);
 
-					if (obj.data.problem_figure == null) {
-						// text question
-						if (obj.data.image_path == null) {
-							// text question
-							$("#question_text_or_img").html(obj.data.question_text);
-						}
-						else {
-							// image question
-							var imgques = `<img src="${obj.data.image_path}">`;
-							$("#question_text_or_img").html(imgques);
-						}
-					}else{
+					}else if (obj.data.image_path != null) {
 						// image question
-						$("#question_text_or_img").html(obj.data.problem_figure);
-					var p_imgques = `<img src="${obj.data.image_figure_1}">`;
-							$("#question_text_and_img").html(p_imgques);
+						var imgques = `<img src="${obj.data.image_path}">`;
+						$("#question_text_or_img").html(imgques);						
+
+
+					}else {
+						$("#pblm_text").html(obj.data.pblm_text);
+
+					var pblm_imgques = `<img src="${obj.data.pblm_question_image}">`;
+						$("#pblm_text_or_img").html(pblm_imgques);
+
+						$("#answer_text").html(obj.data.answer_text);
+
+					var ans_imgques = `<img src="${obj.data.question_image}">`;
+						$("#question_text_and_img").html(ans_imgques);
 					}
 
 					var attemptAnswer = obj.attempt_answer;
@@ -234,9 +258,9 @@ include 'sqlconfig.php';
 			                     <label>${obj.data.answer4}</label>
 			                   	  </div>
 			                      <div class="col-md-1">
-			                      </div>
-			                      </div>
-			                      <div class="row">
+			                      </div>			                   	  
+			                	</div>			                      
+			                    <div class="row">
 			                      <div class="col-md-1">			                      
 			                      </div>
 			                      <div class="col-md-5">
@@ -246,7 +270,7 @@ include 'sqlconfig.php';
 			                   	  <div class="col-md-5">
 			                   	  </div>
 			                      <div class="col-md-1">
-			                      </div>`;
+			                      </div>`;			                      
 					ahtml += '</div>';
 					$("#ansdiv").html(ahtml)
 					}
@@ -278,9 +302,9 @@ include 'sqlconfig.php';
 			                     <label><img src="${obj.data.image_path_4}"></label>
 			                   	  </div>
 			                      <div class="col-md-1">
-			                      </div>
-			                      </div>
-			                      <div class="row">
+			                      </div>			                   	  
+			                	</div>			                    
+			                    <div class="row">
 			                      <div class="col-md-1">			                      
 			                      </div>
 			                      <div class="col-md-5">

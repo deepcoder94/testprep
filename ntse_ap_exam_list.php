@@ -23,7 +23,7 @@ else{
 }
 
 // Getting total number of questions
-$sqlc = "SELECT count(*) as count from questions where exam_id= ".$exam_id;
+$sqlc = "SELECT count(*) as count from NTSE_EXAM_AP_2016_17 where exam_id= ".$exam_id;
 $resultc = mysqli_query($conn, $sqlc);
 
 if (mysqli_num_rows($resultc)>0) {
@@ -33,9 +33,7 @@ if (mysqli_num_rows($resultc)>0) {
 }
 
 // Getting the question and answer records
-$sql = "SELECT a.answer1,a.image_path_1,a.answer2,a.image_path_2,a.answer3,a.image_path_3,a.answer4,a.image_path_4,a.answer5,a.image_path_5,q.question_text,q.image_path,q.problem_figure,q.image_figure_1,q.answer_figure,q.image_figure_2,q.nt_id 
-        FROM answers as a inner join questions as q on a.question_id=q.nt_id 
-        where q.exam_id= ".$exam_id." limit ".$qid.",1";
+$sql = "SELECT a.answer1,a.image_path_1,a.answer2,a.image_path_2,a.answer3,a.image_path_3,a.answer4,a.image_path_4,a.answer5,a.image_path_5,q.question_text,q.problem_figures,q.pblm_question_image,q.answer_figures,q.question_image,q.image_path,q.nt_ap_id,q.is_both_image FROM NTSE_EXAM_AP_2016_2017_ans as a inner join NTSE_EXAM_AP_2016_17 as q on a.question_id=q.nt_ap_id where q.exam_id= ".$exam_id." limit ".$qid.",1";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result)>0) {
@@ -45,7 +43,7 @@ if (mysqli_num_rows($result)>0) {
       }
 
       // If question was attempted, return the answer from test_sheet
-      $quest_id = $response['data']['nt_id'];
+      $quest_id = $response['data']['nt_ap_id'];
       $sqlfind = "select answer_serial from test_sheet where exam_id = $exam_id and user_id = 1 and question_id = $quest_id";
       $resultfind = mysqli_query($conn, $sqlfind);
 
@@ -61,3 +59,6 @@ else{
       echo json_encode($response);
       exit();
 }
+
+
+   

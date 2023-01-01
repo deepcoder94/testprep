@@ -1,11 +1,15 @@
-<?php include"header.php"?>
+<?php 
+session_start();
+include"header_3.php";
+include 'sqlconfig.php';
+?>
 
-    <section class="section why-us" data-section="section2">
+    <section class="section why-us" data-section="section2" style="height: 553px;">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="section-heading">
-            <h2 style="color: #172238;border: 2px solid #172238;">NTSE EXAM</h2>
+            <h2>NTSE EXAM</h2>
           </div>
         </div>
         <div class="col-md-3 col-xs-12"></div>

@@ -1,12 +1,24 @@
-<?php
-include "header_2.php";
+<?php 
+session_start();
+include"header_4.php";
+include 'sqlconfig.php';
+  // if(!isset($_SESSION['name'])){
+
+  ?>
+<!--     <script>
+      alert('Please login to continue.');
+      window.location.href="login.php";
+    </script> -->
+
+  <?php
+  // }
 ?>
 <section class="section why-us" data-section="section2">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-heading">
-					<h2 style="color: #172238;border: 2px solid #172238;">[NTSE STAGE 1, WEST BENGAL 2015-16]</h2>
+					<h2>[NTSE STAGE 1, WEST BENGAL 2015-16]</h2>
 				</div>
 			</div>
 			<div class="col-md-12 col-xs-12">
@@ -17,12 +29,18 @@ include "header_2.php";
 						<input type="hidden" id="question_id" value="1">
 
 						<div class="content" id="question_div" style="font-size: 16px;font-weight: 600;">
-							<p style="font-size:16px; font-weight: 600;">Directions: Questions (1 to 10) :</p>
-							<p style="font-size:16px; font-weight: 600;">Read the questions carefully and give answer by
+					<div class="row">						
+					<div class="col-md-2"></div>		
+					<div class="col-md-8 col-xs-12">
+							<p style="font-size:16px; font-weight: 600;color: #fff;">Directions: Questions (1 to 10) :</p>
+							<p style="font-size:16px; font-weight: 600;color: #fff;">Read the questions carefully and give answer by
 								filling the circle of the letter denoting your selected answer on the O.M.R.
 								Answer-Sheet. </p>
+							</div>
+					<div class="col-md-2"></div>
+				</div>
 							<div class="page-wrap-content"
-								style="padding: 49px;background-color: #ffffff; box-shadow: 0px 0px 6px 6px #e0dfdc;">
+								style="padding: 49px;background-color: #ffffff;">
 								<p style="font-weight: 600;">
 									Q<span id="qno">0</span>. &nbsp;&nbsp; <span id="question_text_or_img"></span></p>
 								<form id="ansdiv"></form>
@@ -38,8 +56,8 @@ include "header_2.php";
 				</div>
 				<div id="end">
 					<div class="page-wrap-content" style="padding: 49px;text-align: center;">
-						<p style="font-size: 25px;font-weight: 600;">Congratulation! You are done!</p>
-						<button id="edit-previous" onclick="resetQuiz()">Go Back</a>
+						<p style="font-size: 25px;font-weight: 600;color: #fff;">Congratulation! You are done!</p>
+						<button id="edit-previous" onclick="resetQuiz()">Go Back</button>
 					</div>
 				</div>
 			</div>
@@ -168,6 +186,8 @@ include "header_2.php";
 
 					var attemptAnswer = obj.attempt_answer;
 					let ahtml = '';
+					if (obj.data.image_path_1 == null) {
+						// text question
 					ahtml += `<div class="row">`;
 					ahtml += `<div class="col-md-1">
 			                      </div>
@@ -191,12 +211,45 @@ include "header_2.php";
 			                   	  </div>
 			                   	  <div class="col-md-5">
 			                     <input type="radio" name="selected_answer" value="4" ${attemptAnswer != undefined && attemptAnswer == 4 ? 'checked' : ''}>
-			                     <label> ${obj.data.answer4}</label>
+			                     <label>${obj.data.answer4}</label>
 			                   	  </div>
 			                      <div class="col-md-1">
 			                      </div>`;
 					ahtml += '</div>';
 					$("#ansdiv").html(ahtml)
+					}
+					else {
+						// image question
+					ahtml += `<div class="row">`;
+					ahtml += `<div class="col-md-1">
+			                      </div>
+			                      <div class="col-md-5">
+			                     <input type="radio" name="selected_answer" value="1" ${attemptAnswer != undefined && attemptAnswer == 1 ? 'checked' : ''}>
+			                     <label><img src="${obj.data.image_path_1}"></label>
+			                   	  </div>
+			                   	  <div class="col-md-5">
+			                     <input type="radio" name="selected_answer" value="2" ${attemptAnswer != undefined && attemptAnswer == 2 ? 'checked' : ''}>
+			                     <label><img src="${obj.data.image_path_2}"></label>
+			                   	  </div>
+			                      <div class="col-md-1">
+			                      </div>			                   	  
+			                	</div>
+			                    <div class="row">
+			                      <div class="col-md-1">
+			                      </div>
+			                      <div class="col-md-5">
+			                     <input type="radio" name="selected_answer" value="3" ${attemptAnswer != undefined && attemptAnswer == 3 ? 'checked' : ''}>
+			                     <label><img src="${obj.data.image_path_3}"></label>
+			                   	  </div>
+			                   	  <div class="col-md-5">
+			                     <input type="radio" name="selected_answer" value="4" ${attemptAnswer != undefined && attemptAnswer == 4 ? 'checked' : ''}>
+			                     <label><img src="${obj.data.image_path_4}"></label>
+			                   	  </div>
+			                      <div class="col-md-1">
+			                      </div>`;
+					ahtml += '</div>';
+					$("#ansdiv").html(ahtml)
+					}
 
 				}
 			}

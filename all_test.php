@@ -13,7 +13,7 @@
                     <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq1"
                       aria-expanded="true" aria-controls="faq1">Engineering Entrance Exam <span style="font-size: 14px;color: #f5a425">(IIT JEE Mains/adv, BITSAT, VIIT etc)</span></a>
                   </div>
-<!--                 <div id="faq1" class="collapse" aria-labelledby="faqhead1" data-parent="#faq">
+                <div id="faq1" class="collapse" aria-labelledby="faqhead1" data-parent="#faq">
                   <div class="card-body">
                     <div class="card">
                       <div class="card-header" id="heading0_1">
@@ -31,15 +31,14 @@
                      </div>
                     </div>
                   </div>
-                </div> -->
+                </div>
               </div>
                     <div class="card">
                         <div class="card-header" id="faqhead2">
                             <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq2"
                             aria-expanded="true" aria-controls="faq2">KVPY Exam</a>
                         </div>
-
-<!--                         <div id="faq2" class="collapse" aria-labelledby="faqhead2" data-parent="#faq">
+                        <div id="faq2" class="collapse" aria-labelledby="faqhead2" data-parent="#faq">
                             <div class="card-body">
                               <div class="card">
                                 <div class="card-header" id="heading0_2">
@@ -57,15 +56,14 @@
                                 </div>
                               </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                     <div class="card">
                         <div class="card-header" id="faqhead3">
                             <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq3"
                             aria-expanded="true" aria-controls="faq3">Medical Entrance Exam (NEET UG)</a>
                         </div>
-
-<!--                         <div id="faq3" class="collapse" aria-labelledby="faqhead3" data-parent="#faq">
+                        <div id="faq3" class="collapse" aria-labelledby="faqhead3" data-parent="#faq">
                             <div class="card-body">
                               <div class="card">
                                 <div class="card-header" id="heading0_3">
@@ -83,7 +81,7 @@
                                 </div>
                               </div>
                             </div>                        
-                        </div> -->
+                        </div>
                     </div>
 
                     <div class="card">
@@ -91,8 +89,7 @@
                             <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq4"
                             aria-expanded="true" aria-controls="faq6">GATE Exam</a>
                         </div>
-
-<!--                         <div id="faq4" class="collapse" aria-labelledby="faqhead4" data-parent="#faq">
+                        <div id="faq4" class="collapse" aria-labelledby="faqhead4" data-parent="#faq">
                             <div class="card-body">
                               <div class="card">
                                 <div class="card-header" id="heading0_4">
@@ -110,7 +107,7 @@
                                 </div>
                               </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
         </div>
@@ -121,8 +118,7 @@
                     <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq5"
                             aria-expanded="true" aria-controls="faq5">Govt Job Exams </a>
                   </div>
-
-<!--                 <div id="faq5" class="collapse" aria-labelledby="faqhead5" data-parent="#faqq">
+                <div id="faq5" class="collapse" aria-labelledby="faqhead5" data-parent="#faqq">
                   <div class="card-body">
                     <div class="card">
                       <div class="card-header" id="heading0_5">
@@ -140,15 +136,14 @@
                       </div>
                     </div>
                   </div>
-                </div> -->
+                </div>
             </div>
                     <div class="card">
                         <div class="card-header" id="faqhead6">
                           <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq6"
                             aria-expanded="true" aria-controls="faq5">CLAT Exam</a>
                         </div>
-
-<!--                         <div id="faq6" class="collapse" aria-labelledby="faqhead6" data-parent="#faqq">
+                        <div id="faq6" class="collapse" aria-labelledby="faqhead6" data-parent="#faqq">
                           <div class="card-body">
                             <div class="card">
                               <div class="card-header" id="heading0_6">
@@ -165,7 +160,7 @@
                               </div>
                             </div>
                           </div>
-                        </div> -->
+                        </div>
                     </div>
                     <div class="card">
 <!--                         <div class="card-header" id="faqhead7">
@@ -176,8 +171,7 @@
                             <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq7"
                             aria-expanded="true" aria-controls="faq6">NTSE Exam</a>
                         </div>
-
-<!--                         <div id="faq7" class="collapse" aria-labelledby="faqhead7" data-parent="#faqq">
+                        <div id="faq7" class="collapse" aria-labelledby="faqhead7" data-parent="#faqq">
                           <div class="card-body">
                             <div class="card">
                               <div class="card-header" id="heading0_7">
@@ -205,7 +199,7 @@
                               </div>
                             </div>
                           </div>
-                        </div> -->                        
+                        </div>                      
                     </div>
 
                     <div class="card">
@@ -213,7 +207,7 @@
                             <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq8"
                             aria-expanded="true" aria-controls="faq8">MBA Entrance exam (CAT/XAT/SNAP/XAT)</a>
                         </div>
-<!-- 
+
                         <div id="faq8" class="collapse" aria-labelledby="faqhead8" data-parent="#faqq">
                           <div class="card-body">
                             <div class="card">
@@ -232,7 +226,7 @@
                               </div>
                             </div>
                           </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>                
         </div>
